@@ -1,2 +1,1 @@
-firefox-esr
 xvfb
