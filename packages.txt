@@ -1,3 +1,2 @@
-firefox
-firefox-geckodriver
+firefox-esr
 xvfb
