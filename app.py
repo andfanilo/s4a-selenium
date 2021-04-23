@@ -4,7 +4,7 @@ import time
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -15,9 +15,10 @@ TIMEOUT = 20
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
-firefoxOptions = Options()
-firefoxOptions.add_argument("--headless")
-driver = webdriver.Firefox(options=firefoxOptions)
+chrome_options = Options()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
 driver.get(URL)
 
 try:
