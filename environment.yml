@@ -1,0 +1,9 @@
+name: test
+channels:
+  - conda-forge
+dependencies:
+  - firefox
+  - geckodriver
+  - selenium
+  - streamlit
+  - xvfbwrapper
