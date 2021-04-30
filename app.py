@@ -4,6 +4,7 @@ import time
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,22 +17,17 @@ st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
 firefoxOptions = Options()
-firefoxOptions.set_binary("/home/appuser/.conda/bin/firefox")
 firefoxOptions.add_argument("--headless")
 driver = webdriver.Firefox(
-    options=firefoxOptions, 
-    executable_path='/home/appuser/.conda/bin/geckodriver'
+    firefox_binary=FirefoxBinary("/home/appuser/.conda/bin/firefox"),
+    options=firefoxOptions,
+    executable_path="/home/appuser/.conda/bin/geckodriver",
 )
 driver.get(URL)
 
 try:
     WebDriverWait(driver, TIMEOUT).until(
-        EC.visibility_of_element_located(
-            (
-                By.XPATH,
-                XPATH,
-            )
-        )
+        EC.visibility_of_element_located((By.XPATH, XPATH,))
     )
 
 except TimeoutException:
