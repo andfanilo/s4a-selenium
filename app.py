@@ -20,7 +20,10 @@ rootDir = '.'
 for dirName, subdirList, fileList in os.walk("/home/appuser/.conda/"):
     st.subheader('Found directory: %s' % dirName)
     for fname in fileList:
-        st.info('\t%s' % fname) if "geckodriver" in fname else st.markdown('\t%s' % fname)
+        if "geckodriver" in fname:
+            st.info('\t%s' % fname)  
+        else: 
+            st.markdown('\t%s' % fname)
 
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
