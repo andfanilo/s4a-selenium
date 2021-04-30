@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - firefox
+  - geckodriver
+  - selenium
+  - streamlit
+  - xvfbwrapper
