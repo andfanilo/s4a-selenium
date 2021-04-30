@@ -4,5 +4,4 @@ dependencies:
   - firefox
   - geckodriver
   - selenium
-  - streamlit
   - xvfbwrapper
