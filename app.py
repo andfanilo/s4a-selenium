@@ -16,6 +16,7 @@ st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
 firefoxOptions = Options()
+firefoxOptions.set_binary("/home/appuser/.conda/bin/firefox")
 firefoxOptions.add_argument("--headless")
 driver = webdriver.Firefox(
     options=firefoxOptions, 
