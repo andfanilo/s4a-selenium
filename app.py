@@ -12,12 +12,22 @@ URL = "https://www.unibet.fr/sport/football/europa-league/europa-league-matchs"
 XPATH = "//*[@class='ui-mainview-block eventpath-wrapper']"
 TIMEOUT = 20
 
+# Import the os module, for the os.walk function
+import os
+ 
+# Set the directory you want to start from
+rootDir = '.'
+for dirName, subdirList, fileList in os.walk("/home/appuser/.conda/"):
+    st.markdown('Found directory: %s' % dirName)
+    for fname in fileList:
+        st.markdown('\t%s' % fname)
+
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
 firefoxOptions = Options()
 firefoxOptions.add_argument("--headless")
-driver = webdriver.Firefox(options=firefoxOptions)
+driver = webdriver.Firefox(options=firefoxOptions, executable_path='/home/appuser/.conda/lib/python3.7/site-packages/selenium/webdriver')
 driver.get(URL)
 
 try:
