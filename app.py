@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 import os 
-os.system("ls -l")
+st.write(os.system("ls -l"))
 
 URL = "https://www.unibet.fr/sport/football/europa-league/europa-league-matchs"
 XPATH = "//*[@class='ui-mainview-block eventpath-wrapper']"
