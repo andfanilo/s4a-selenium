@@ -3,4 +3,4 @@ channels:
 dependencies:
   - geckodriver
   - selenium
-  - webdriver_manager
+  - webdriver-manager
